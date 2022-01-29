@@ -50,6 +50,13 @@ ul {
   list-style: none;
 }
 
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
 /* Typography */
 
 h1 {
@@ -115,4 +122,30 @@ p {
 #navbar .navbar__menu__item:hover {
   border: 1px solid var(--color-white);
   background-color: var(--color-dark-pink);
+}
+
+/* Home */
+#home {
+  background: url("image/background.png") center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+#home .home__profile {
+  width: 400px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid var(--color-light-white);
+}
+#home .home__title,
+#home .home__description {
+  color: var(--color-white);
+}
+#home .home__contact {
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
 }
