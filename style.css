@@ -375,3 +375,24 @@ p {
   transform: translateX(-50%);
   margin-top: 8px;
 }
+
+/* Contact */
+#contact {
+  background-color: var(--color-pink);
+}
+#contact .contact__title,
+#contact .contact__email,
+#contact .contact__end {
+  color: var(--color-white);
+}
+#contact .contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+}
+#contact .contact__links a i {
+  transition: all var(--animation-duration) ease-in;
+}
+#contact .contact__links a i:hover {
+  transform: scale(1.1);
+  color: var(--color-yellow);
+}
