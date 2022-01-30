@@ -41,7 +41,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
-  cursor: default;
 }
 
 a {
@@ -288,4 +287,91 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* Work */
+#work .work__category {
+  margin: 40px;
+}
+#work .work__category .category__btn {
+  border: 1px solid var(--color-dark-white);
+  border-radius: var(--size-border-radius);
+  font-size: var(--font-regular);
+  padding: 8px 48px;
+}
+#work .work__category .category__btn.active,
+#work .work__category .category__btn:hover {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+}
+#work .work__category .category__btn .category__count {
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  color: var(--color-white);
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  left: 4px;
+  opacity: 0;
+  transition: all var(--animation-duration) ease-in;
+}
+#work .work__category .category__btn.active .category__count,
+#work .work__category .category__btn:hover .category__count {
+  opacity: 1;
+  top: 0;
+}
+#work .work__projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#work .work__projects .project {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light-white);
+  width: 200px;
+  height: 250px;
+  margin: 2px;
+}
+#work .work__projects .project .project__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+#work .work__projects .project .project__description {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-black);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--animation-duration) ease-in;
+}
+#work .work__projects .project:hover .project__description {
+  opacity: 0.8;
+  transform: translateY(0);
+  cursor: pointer;
+}
+#work .work__projects .project .project__description h3 {
+  color: var(--color-white);
+}
+#work .work__projects .project .project__description h3::after {
+  content: "";
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-dark-white);
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
 }
