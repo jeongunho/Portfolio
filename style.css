@@ -104,10 +104,19 @@ p {
 /* Navigation bar */
 
 #navbar {
+  padding: 16px;
+  width: 100%;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--color-white);
+  background-color: transparent;
+  transition: all var(--animation-duration) ease-in-out;
+}
+#navbar.navbar--dark {
+  background-color: var(--color-pink);
+  padding: 8px;
 }
 #navbar .navbar__logo {
   font-size: var(--font-medium);
@@ -143,6 +152,7 @@ p {
 #home {
   background: url("image/background.png") center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 #home .home__profile {
