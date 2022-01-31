@@ -59,6 +59,18 @@ button {
   outline: none;
 }
 
+/* Section common */
+.section {
+  text-align: center;
+  margin: auto;
+  padding: 50px;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* Typography */
 
 h1 {
@@ -96,23 +108,17 @@ p {
   justify-content: space-between;
   align-items: center;
   color: var(--color-white);
-  background-color: var(--color-pink);
-  padding: 16px;
 }
-
 #navbar .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
 }
-
 #navbar .navbar__logo i {
   margin-right: 8px;
 }
-
 #navbar .navbar__menu {
   display: flex;
 }
-
 #navbar .navbar__menu .navbar__menu__item {
   padding: 8px 12px;
   margin: 0px 4px;
@@ -120,13 +126,20 @@ p {
   border: 1px solid transparent;
   border-radius: var(--size-border-radius);
 }
-
 #navbar .navbar__menu__item:hover {
   border: 1px solid var(--color-white);
   background-color: var(--color-dark-pink);
 }
+#navbar .navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
+}
 
 /* Home */
+
 #home {
   background: url("image/background.png") center/cover no-repeat;
   padding: 40px;
@@ -152,19 +165,8 @@ p {
   border-radius: var(--size-border-radius);
 }
 
-/* Section common */
-.section {
-  text-align: center;
-  margin: auto;
-  padding: 50px;
-}
-
-.section__container {
-  max-width: 1200px;
-  margin: auto;
-}
-
 /* About */
+
 #about .about__majors {
   display: flex;
   justify-content: space-between;
@@ -222,6 +224,7 @@ p {
 }
 
 /* Skill */
+
 #skills {
   background-color: var(--color-yellow);
 }
@@ -284,12 +287,14 @@ p {
 #skills .section__container .skillset .skillset__right .tools,
 #skills .section__container .skillset .skillset__right .etc {
   height: 50%;
+  padding: 20px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 /* Work */
+
 #work .work__category {
   margin: 40px;
 }
@@ -377,6 +382,7 @@ p {
 }
 
 /* Contact */
+
 #contact {
   background-color: var(--color-pink);
 }
@@ -395,4 +401,37 @@ p {
 #contact .contact__links a i:hover {
   transform: scale(1.1);
   color: var(--color-yellow);
+}
+
+/* For below 768px screen width */
+
+@media screen and (max-width: 768px) {
+  #navbar .navbar__toggle-btn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #navbar .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  #about .about__majors {
+    flex-direction: column;
+  }
+  #about .about__majors .major {
+    margin-bottom: 36px;
+  }
+
+  #skills .section__container .skillset {
+    flex-direction: column;
+  }
+
+  #work .section__container .work__projects .project {
+    flex-grow: 1;
+  }
 }
