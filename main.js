@@ -33,7 +33,27 @@ navbarMenu.addEventListener('click', (event) => {
 });
 
 // Handle click on 'Contact Me' button on home
-const ContactBtn = document.querySelector('.home__contact');
-ContactBtn.addEventListener('click', () => {
+const contactBtn = document.querySelector('.home__contact');
+contactBtn.addEventListener('click', () => {
   scrollIntoView('#contact')
 });
+
+// Make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector('#home');
+const homeHeight = home.getBoundingClientRect().height;
+const homeContainer = document.querySelector('.home__container');
+document.addEventListener('scroll', () => {
+  homeContainer.style.opacity = 1 - window.scrollY / homeHeight;
+  contactBtn.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+// When mouse enter 'Contact Me' button: regain opacity
+contactBtn.addEventListener('mouseover', () => {
+  contactBtn.style.opacity = 1;
+  contactBtn.style.transition = 'all 300ms ease-in-out';
+})
+
+// When mouse leave 'Contact Me' button: lose opacity
+contactBtn.addEventListener('mouseleave', () => {
+  contactBtn.style.opacity = 1 - window.scrollY / homeHeight;
+})
