@@ -51,9 +51,24 @@ document.addEventListener('scroll', () => {
 contactBtn.addEventListener('mouseover', () => {
   contactBtn.style.opacity = 1;
   contactBtn.style.transition = 'all 300ms ease-in-out';
-})
+});
 
 // When mouse leave 'Contact Me' button: lose opacity
 contactBtn.addEventListener('mouseleave', () => {
   contactBtn.style.opacity = 1 - window.scrollY / homeHeight;
-})
+});
+
+// Show '↑' button when scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+  if(window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add('visible');
+  } else {
+    arrowUp.classList.remove('visible');
+  }
+});
+
+// Handle click on the '↑' button
+arrowUp.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
