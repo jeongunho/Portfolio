@@ -343,6 +343,12 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+#work .work__projects.animationOut {
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
 }
 #work .work__projects .project {
   position: relative;
@@ -353,6 +359,9 @@ p {
   width: 250px;
   height: 200px;
   margin: 2px;
+}
+#work .work__projects .project.invisible {
+  display: none;
 }
 #work .work__projects .project .project__img {
   max-width: 100%;
