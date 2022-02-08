@@ -57,6 +57,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* Section common */
@@ -135,6 +136,9 @@ p {
   border: 1px solid transparent;
   border-radius: var(--size-border-radius);
 }
+#navbar .navbar__menu .navbar__menu__item.active {
+  border-color: var(--color-white);
+}
 #navbar .navbar__menu__item:hover {
   border-color: var(--color-white);
   background-color: var(--color-dark-pink);
@@ -151,8 +155,7 @@ p {
 
 #home {
   background: url("image/background.png") center/cover no-repeat;
-  padding: 40px;
-  padding-top: 120px;
+  padding: 120px 40px;
   text-align: center;
 }
 #home .home__profile {
@@ -313,6 +316,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 #work .work__category .category__btn.selected,
 #work .work__category .category__btn:hover {
@@ -327,16 +331,17 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
-  top: -20px;
-  left: 4px;
+  position: absolute;
+  top: -16px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
 #work .work__category .category__btn.selected .category__count,
 #work .work__category .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 #work .work__projects {
   display: flex;
@@ -445,8 +450,25 @@ p {
 /* For below 768px screen width */
 
 @media screen and (max-width: 768px) {
+  :root {
+    /* Font size */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   #navbar .navbar__toggle-btn {
     display: block;
+    top: 16px;
+    right: 16px;
+    font-size: var(--font-medium);
   }
   #navbar {
     flex-direction: column;
@@ -463,18 +485,36 @@ p {
     display: block;
   }
 
+  #home .home__profile {
+    width: 300px;
+  }
+
   #about .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
   #about .about__majors .major {
-    margin-bottom: 36px;
+    margin-bottom: 30px;
   }
 
   #skills .section__container .skillset {
     flex-direction: column;
   }
 
+  #work .work__category .category__btn {
+    margin: 4px 0;
+  }
   #work .section__container .work__projects .project {
     flex-grow: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: var(--font-large);
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }
