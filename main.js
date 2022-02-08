@@ -8,10 +8,13 @@ document.addEventListener('scroll', () => {
   console.log(window.scrollY);
   console.log(navbarHeight);
   */
+  const navbarAnchor = document.querySelector('.navbar__anchor');
   if(window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
+    navbarAnchor.style.color = 'white';
   } else {
     navbar.classList.remove('navbar--dark');
+    navbarAnchor.style.color = 'black';
   }
 });
 
@@ -104,19 +107,13 @@ workBtnContainer.addEventListener('click', (event) => {
 });
 
 const sectionIds = ['#home', '#about', '#skills', '#work', '#contact'];
-const sections = sectionIds.map(value => document.querySelector(value));
+const sections = sectionIds.map(id => document.querySelector(id));
 // console.log(sections);
-const navItems = sectionIds.map(value => document.querySelector(`[data-link='${value}']`));
+const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
 // console.log(navItems);
 
-function getIndexOfSectionOnViewPort() {
-  const section = document.elementFromPoint(window.innerWidth / 2, window.innerHeight * (2 / 3)).closest('.section');
-  const index = sectionIds.indexOf(`#${section.id}`);
-  return index;
-}
-
-let selectedNavIndex = getIndexOfSectionOnViewPort();
-let selectedNavItem = navItems[selectedNavIndex];
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
 
 function selectNavItem(selected) {
   selectedNavItem.classList.remove('active');
@@ -136,22 +133,22 @@ const observerOptions = {
   rootMargin: '0px',
   threshold: 0.3,
 };
-const observerCallback = (entries) => {
-  entries.forEach(value => {
-    // console.log(value.target);
-    if (!value.isIntersecting && value.intersectionRatio > 0) {
-      const index = sectionIds.indexOf(`#${value.target.id}`);
+const observerCallback = (entries, Observer) => {
+  entries.forEach(entry => {
+    // console.log(entry.target);
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
       // console.log(index);
-      if (value.boundingClientRect.y < 0) {
+      if (entry.boundingClientRect.y < 0) {
         selectedNavIndex = index + 1;
       } else {
-        selectedNavIndex = index -1;
+        selectedNavIndex = index - 1;
       }
     }
   });
 };
 const observer = new IntersectionObserver(observerCallback, observerOptions);
-sections.forEach(value => observer.observe(value));
+sections.forEach(section => observer.observe(section));
 
 window.addEventListener('wheel', () => {
   if(window.scrollY === 0) {
@@ -159,9 +156,5 @@ window.addEventListener('wheel', () => {
   } else if (Math.round(window.scrollY + window.innerHeight) >= document.body.clientHeight) {
     selectedNavIndex = navItems.length - 1;
   }
-  selectNavItem(navItems[selectedNavIndex]);
-});
-
-window.addEventListener('load', () => {
   selectNavItem(navItems[selectedNavIndex]);
 });
