@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>정운호의 포트폴리오</title>
     <meta name="description" content="Portfolio for Unho">
     <meta name="author" content="Unho">
     <link rel="icon" type="image/png" href="image/favicon.png">
     <script src="https://kit.fontawesome.com/a12c4bafc1.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script defer src="main.js"></script>
   </head>
@@ -19,13 +19,13 @@
     <!-- Navbar -->
     <nav id="navbar">
       <div class="navbar__logo">
-        <a href="#" class="navbar__anchor"><i class="fas fa-envelope"></i>PORTFOLIO</a>
+        <a href="#" class="navbar__anchor">PORTFOLIO</a>
       </div>
       <ul class="navbar__menu">
         <li class="navbar__menu__item" data-link="#home">Home</li>
         <li class="navbar__menu__item" data-link="#about">About</li>
         <li class="navbar__menu__item" data-link="#skills">Skills</li>
-        <li class="navbar__menu__item" data-link="#work">Work</li>
+        <li class="navbar__menu__item" data-link="#works">Works</li>
         <li class="navbar__menu__item" data-link="#contact">Contact</li>
       </ul>
       
@@ -37,36 +37,37 @@
     <section id="home">
       <div class="home__container">
         <img src="image/profile.jpg" alt="profile photo" class="home__profile">
-        <h1 class="home__title">Hello<br>World</h1>
-        <h2 class="home__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam a nulla in perferendis commodi corporis! Explicabo doloribus nulla delectus adipisci ut dolor voluptatem excepturi rerum, ex culpa at ratione consectetur.</h2>
+        <h1 class="home__title">안녕하세요. 웹 퍼블리셔 정운호입니다.</h1>
+        <h2 class="home__description">Junior publisher who dreams of becoming a full-stack developer</h2>
+        <h2 class="home__keyword">Problem solving | Communication | Creativity | Memory | Technology</h2>
       </div>
       <button class="home__contact" data-link="#contact">Contact Me</button>
     </section>
     <!-- About -->
     <section id="about" class="section section__container">
       <h1>About me</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi dolore repudiandae ullam magnam nulla debitis neque vitae ipsam et temporibus. Iusto natus fuga impedit sequi illo blanditiis perspiciatis veritatis totam.</p>
+      <p class="explain">웹 페이지의 토대를 이루는 기본 문법인 HTML, CSS와<br>동적인 요소들을 가미해 감각적인 페이지로의 변환을 도와주는 JavaScript를 공부하고 있습니다.</p>
       <div class="about__majors">
         <div class="major">
           <div class="major__icon">
             <i class="fab fa-html5"></i>
           </div>
           <h2 class="major__title">HTML5</h2>
-          <p class="major__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eaque alias placeat, adipisci magnam illo vitae repellendus voluptatem ratione enim libero. Harum ratione earum praesentium, dolorum obcaecati iure voluptates molestiae!</p>
+          <p class="major__description">웹 페이지의 레이아웃 구성에 대한 이해도가 높으며, 시멘틱 태그를 활용하여 가독성이 좋은 코드를 만들기 위해 노력합니다.</p>
         </div>
         <div class="major">
           <div class="major__icon">
             <i class="fab fa-css3-alt"></i>
           </div>
           <h2 class="major__title">CSS3</h2>
-          <p class="major__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse necessitatibus asperiores recusandae quia eum, dolore facere ut officiis laboriosam. Deleniti unde totam accusamus maxime officiis perspiciatis placeat facere itaque natus.</p>
+          <p class="major__description">클래스와 선택자를 사용해 노드에 용이하게 접근하여 요소들을 스타일링 합니다. 기본적인 속성 외, 중요한 기능인 플렉스 박스와 미디어 쿼리에 대해 이해하고 있으며, 이를 이용한 반응형 웹 페이지 제작이 가능합니다.</p>
         </div>
         <div class="major">
           <div class="major__icon">
             <i class="fab fa-js"></i>
           </div>
           <h2 class="major__title">JavaScript</h2>
-          <p class="major__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea mollitia, enim facere repellendus veritatis neque iure minus molestiae dolorem temporibus. Esse sint doloribus recusandae nulla cupiditate cum tenetur natus nesciunt?</p>
+          <p class="major__description">DOM에 접근하여 함수를 선언하고 로직을 만듦으로써 어떻게 하면 정적인 페이지를 창의적이고 다이나믹한 페이지로 구현할 수 있을지 항상 연구합니다.</p>
         </div>
       </div>
       <div class="about__jobs">
@@ -90,8 +91,7 @@
     <section id="skills" class="section">
       <div class="section__container">
         <h1>Skills</h1>
-        <h2>Skills & Attributes</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam molestiae aliquam eaque quos fugit repellat facilis sequi perspiciatis voluptate, libero voluptatibus laborum. Voluptatum illum explicabo voluptates, laboriosam vel consectetur fugit.</p>
+        <p>다양한 장르의 웹사이트를 직접 클론 코딩해 보며, 사용 가능한 언어와 프로그램의 숙련도를 평가해 보았습니다.</p>
         <div class="skillset">
           <div class="skillset__left">
             <h3 class="skillset__title">Skills</h3>
@@ -169,12 +169,12 @@
         </div>
       </div>
     </section>
-    <!-- Work -->
-    <section id="work" class="section">
+    <!-- Works -->
+    <section id="works" class="section">
       <div class="section__container">
-        <h1>My work</h1>
-        <h3>Projects</h3>
-        <div class="work__category">
+        <h1>My works</h1>
+        <h3>개인적으로 작업했던 웹사이트입니다.</h3>
+        <div class="works__category">
           <button class="category__btn selected" data-filter='*'>All
             <span class="category__count" data-filter='*'>8</span>
           </button>
@@ -185,7 +185,7 @@
             <span class="category__count" data-filter='responsive'>5</span>
           </button>
         </div>
-        <div class="work__projects">
+        <div class="works__projects">
           <a href="#" class="project" target="blank" data-type="static">
             <img src="image/navbar.png" class="project__img">
             <div class="project__description">
