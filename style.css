@@ -386,6 +386,13 @@ p {
   max-width: 100%;
   max-height: 100%;
 }
+#works .works__projects .project .nonfiction {
+  transform: scale(0.75);
+}
+#works .works__projects .project .uniqlo {
+  position: relative;
+  top: 5px;
+}
 #works .works__projects .project .project__description {
   position: absolute;
   display: flex;
@@ -401,7 +408,7 @@ p {
   transition: all var(--animation-duration) ease-in;
 }
 #works .works__projects .project:hover .project__description {
-  opacity: 0.75;
+  opacity: 0.9;
   transform: translateY(0);
   cursor: pointer;
 }
@@ -424,22 +431,44 @@ p {
 
 #contact {
   background-color: var(--color-dark-peri);
-}
-#contact .contact__title,
-#contact .contact__email,
-#contact .contact__end {
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-#contact .contact__links {
-  font-size: var(--font-large);
-  margin: 24px 0;
+.contact__email {
+  font-size: 2rem;
+  transition: all var(--animation-duration) ease-in-out;
 }
-#contact .contact__links a i {
-  transition: all var(--animation-duration) ease-in;
+.contact__email:hover {
+  transform: scale(1.25);
+  opacity: 0.75;
 }
-#contact .contact__links a i:hover {
-  transform: scale(1.1);
-  color: var(--color-yellow);
+.contact__end {
+  position: relative;
+  margin: 0;
+  margin-top: 2rem;
+  animation-duration: 750ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes end {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: -1rem;
+    }
+    70% {
+      top: 0;
+    }
+    85% {
+      top: -0.5rem;
+    }
+    100% {
+      top: 0;
+    }
 }
 
 /* Scroll */
@@ -464,6 +493,17 @@ p {
 
 /* For below 768px screen width */
 
+@media screen and (max-width: 1048px) {
+  .home__container h1 {
+    font-size: 2rem;
+  }
+  .home__container h2 {
+    font-size: 1.25rem;
+  }
+} 
+
+/* For below 768px screen width */
+
 @media screen and (max-width: 768px) {
   :root {
     /* Font size */
@@ -475,8 +515,7 @@ p {
   }
 
   .section {
-    padding: 16px;
-    padding-top: 40px;
+    padding: 40px 16px;
   }
 
   #navbar .navbar__toggle-btn {
@@ -495,6 +534,7 @@ p {
     text-align: center;
     width: 100%;
     display: none;
+    margin-top: 1rem;
   }
   #navbar .navbar__menu.open {
     display: block;
@@ -503,16 +543,24 @@ p {
   #home .home__profile {
     width: 300px;
   }
+  
+  .home__container h1 {
+    font-size: 1.5rem;
+  }
+  .home__container h2 {
+    font-size: 1rem;
+  }
 
   #about .about__majors {
     flex-direction: column;
     margin-top: 30px;
     margin-bottom: 0px;
+    width: 75%;
+    margin: 0 auto;
   }
   #about .about__majors .major {
-    margin-bottom: 30px;
     width: 100%;
-    margin: 0 auto;
+    margin: 1rem auto;
   }
 
   #skills .section__container .skillset {

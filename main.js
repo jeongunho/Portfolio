@@ -165,3 +165,12 @@ window.addEventListener("wheel", () => {
   }
   selectNavItem(navItems[selectedNavIndex]);
 });
+
+const email = document.querySelector('.contact__email');
+const end = document.querySelector('.contact__end');
+email.addEventListener('mouseenter', (e) => {
+  end.style.animationName = 'end';
+});
+email.addEventListener('mouseleave', (e) => {
+  end.style.animationName = 'none';
+});
