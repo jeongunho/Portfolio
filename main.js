@@ -174,3 +174,11 @@ email.addEventListener('mouseenter', (e) => {
 email.addEventListener('mouseleave', (e) => {
   end.style.animationName = 'none';
 });
+
+AOS.init();
+
+AOS.init({
+  delay: 0,
+  duration: 750,
+  once: true,
+});

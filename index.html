@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <link rel="stylesheet" href="style.css">
     <script defer src="main.js"></script>
   </head>
@@ -35,16 +37,17 @@
       </button>
     </nav>
     <section id="home">
-      <div class="home__container">
+      <div class="home__container" data-aos="fade" data-aos-duration="750" data-aos-easing="ease-in-out">
         <img src="image/profile.jpg" alt="profile photo" class="home__profile">
         <h1 class="home__title">안녕하세요. 웹 퍼블리셔 정운호입니다.</h1>
         <h2 class="home__description">Junior publisher who dreams of becoming a Front-end developer</h2>
         <h2 class="home__keyword">Problem solving | Communication | Creativity | Memory | Technology</h2>
       </div>
-      <button class="home__contact" data-link="#contact">Contact Me</button>
+      <button class="home__contact" data-link="#contact" data-aos="fade" data-aos-duration="750" data-aos-easing="ease-in-out" data-aos-offset="0"
+      >Contact Me</button>
     </section>
     <!-- About -->
-    <section id="about" class="section section__container">
+    <section id="about" class="section section__container" data-aos="fade-right" data-aos-duration="750" data-aos-easing="ease-in-out">
       <h1>About me</h1>
       <p class="explain">웹 페이지의 토대를 이루는 기본 문법인 HTML, CSS와<br>동적인 요소들을 가미해 감각적인 페이지로의 변환을 도와주는 JavaScript를 공부하고 있습니다.</p>
       <div class="about__majors">
@@ -89,7 +92,7 @@
     </section>
     <!-- Skills -->
     <section id="skills" class="section">
-      <div class="section__container">
+      <div class="section__container" data-aos="fade-left" data-aos-duration="750" data-aos-easing="ease-in-out">
         <h1>Skills</h1>
         <p>다양한 장르의 웹사이트를 직접 클론 코딩해 보며, 사용 가능한 언어와 프로그램의 숙련도를 평가해 보았습니다.</p>
         <div class="skillset">
@@ -171,7 +174,7 @@
     </section>
     <!-- Works -->
     <section id="works" class="section">
-      <div class="section__container">
+      <div class="section__container" data-aos="fade-right" data-aos-duration="750" data-aos-easing="ease-in-out">
         <h1>My works</h1>
         <h3>개인적으로 작업했던 웹사이트입니다.</h3>
         <div class="works__category">
@@ -246,7 +249,7 @@
       </div>
     </section>
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section" data-aos="fade" data-aos-duration="750" data-aos-easing="ease-in-out">
       <h1 class="contact__title">Contact</h1>
       <h2 class="contact__email">
         <a href="https://mail.google.com/mail/u/0/?fs=1&to=unhojeong@naver.com&tf=cm" target="_blank">unhojeong@naver.com</a>
